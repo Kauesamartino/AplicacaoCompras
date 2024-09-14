@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CartaoDeCredito {
@@ -15,9 +16,9 @@ public class CartaoDeCredito {
         this.compras = new ArrayList<>();
     }
 
-    // Métodos
-    public boolean lancaCompra(Compra compra){
-        if (this.saldo > compra.getValor()){
+    // Método para lançar uma compra
+    public boolean realizaCompra(Compra compra){
+        if (this.saldo >= compra.getValor()){
             this.saldo -= compra.getValor();
             this.compras.add(compra);
             return true;
@@ -25,16 +26,24 @@ public class CartaoDeCredito {
         return false;
     }
 
-    // Getters
-    public double getLimite() {
-        return limite;
-    }
-
+    // Método para consultar o saldo
     public double getSaldo() {
         return saldo;
     }
 
-    public List<Compra> getCompras() {
-        return compras;
+    // Método para listar compras realizadas
+    public void listarCompras() {
+        System.out.println("\nCOMPRAS REALIZADAS:\n");
+        Collections.sort(compras);
+        for (Compra c : compras){
+            System.out.println(c.toString());
+        }
+    }
+
+    // Método para aumentar o limite do cartão
+    public void aumentarLimite(double valor) {
+        this.limite += valor;
+        this.saldo += valor;
     }
 }
+
