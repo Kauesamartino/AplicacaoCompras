@@ -11,7 +11,7 @@ Este projeto é um simples gerenciador de compras com cartão de crédito, desen
 ### **Como usar**
   
 1. Compile o código: Utilize um compilador Java para compilar o arquivo Principal.java.
-2. Execute o programa: Execute o arquivo Principal.class gerado na compilação.
+2. Execute o programa: Execute o arquivo Main.class gerado na compilação.
 3. Interaja com o menu: Siga as instruções do menu para:
    - Lançar compras
    - Consultar as compras

@@ -14,12 +14,14 @@ public class Main {
 
         int opcao;
         do {
+            System.out.println("\n**********************");
             System.out.println("\nMenu:");
             System.out.println("1. Realizar compra");
             System.out.println("2. Consultar saldo");
             System.out.println("3. Listar compras realizadas");
             System.out.println("4. Aumentar limite do cartão");
             System.out.println("5. Sair");
+            System.out.println("\n**********************\n");
 
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
