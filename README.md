@@ -57,6 +57,3 @@ Sinta-se à vontade para contribuir com este projeto. Toda contribuição é bem
 ## 📝 Licença
 
 Este projeto está sob a [licença MIT](LICENSE).
-
-### Licença
-Este projeto está licenciado sob a licença MIT.
