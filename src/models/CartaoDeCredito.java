@@ -1,8 +1,6 @@
 package models;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class CartaoDeCredito {
     private double limite;
@@ -16,34 +14,98 @@ public class CartaoDeCredito {
         this.compras = new ArrayList<>();
     }
 
-    // Método para lançar uma compra
-    public boolean realizaCompra(Compra compra){
-        if (this.saldo >= compra.getValor()){
-            this.saldo -= compra.getValor();
+    // Métodos
+
+    // Método para realizar compra
+    public void realizaCompra(CartaoDeCredito cartao){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Informe a descrição da compra: ");
+        String descricao = scanner.nextLine();
+        System.out.println("Informe o valor da compra: ");
+        double valor = scanner.nextDouble();
+        Date data = new Date();
+        scanner.nextLine();
+        System.out.println("Informe a categoria da compra: ");
+        String categoria = scanner.nextLine();
+
+        Compra compra = new Compra(descricao, valor, data, categoria);
+
+        if (this.saldo >= valor){
+            boolean compraRealizada = true;
+            this.saldo -= valor;
             this.compras.add(compra);
-            return true;
+            System.out.println("Compra realizada com sucesso!");
+        } else {
+            boolean compraRealizada = false;
+            System.out.println("Saldo insuficiente para realizar essa compra");
         }
-        return false;
     }
 
-    // Método para consultar o saldo
-    public double getSaldo() {
-        return saldo;
+
+    // Método para visualizar o saldo
+    public void consultaSaldo(CartaoDeCredito cartao){
+        System.out.printf("O seu saldo é de R$%.2f%n", this.saldo);
     }
 
-    // Método para listar compras realizadas
-    public void listarCompras() {
+    // Método para listar compras
+    public void listarCompras(CartaoDeCredito cartao){
         System.out.println("\nCOMPRAS REALIZADAS:\n");
         Collections.sort(compras);
-        for (Compra c : compras){
-            System.out.println(c.toString());
+        for (Compra compra : compras){
+            System.out.println(compra.toString());
         }
     }
 
-    // Método para aumentar o limite do cartão
-    public void aumentarLimite(double valor) {
+    // Método para aumentar limite
+    public void aumentarLimite(CartaoDeCredito cartao){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Informe o valor que deseja aumentar o limite: ");
+        double valor = scanner.nextDouble();
+
         this.limite += valor;
         this.saldo += valor;
+    }
+
+    // Método para chamar menu
+    public void menu(CartaoDeCredito cartao){
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
+
+        do{
+            System.out.println("\n**********************" +
+                    "\nMENU DE COMPRAS" +
+                    "\n1 - Realizar compras" +
+                    "\n2 - Consultar saldo" +
+                    "\n3 - Listar compras realizadas" +
+                    "\n4 - Aumentar limite do cartão" +
+                    "\n5 - Sair" +
+                    "\n**********************");
+
+            System.out.println("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+
+            switch (opcao){
+                case 1:
+                    cartao.realizaCompra(cartao);
+                    break;
+                case 2:
+                    cartao.consultaSaldo(cartao);
+                    break;
+                case 3:
+                    cartao.listarCompras(cartao);
+                    break;
+                case 4:
+                    cartao.aumentarLimite(cartao);
+                    break;
+                case 5:
+                    System.out.println("Obrigado por usar o sistema!");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Por favor, e");
+            }
+        } while (opcao != 5);
     }
 }
 
