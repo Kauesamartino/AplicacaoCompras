@@ -1,31 +1,62 @@
-## **Gerenciador de Compras com Cartão de Crédito**
+# Sistema de Gerenciamento de Cartão de Crédito
 
-Este projeto é um simples gerenciador de compras com cartão de crédito, desenvolvido em Java. Ele permite que o usuário:
+## 📋 Descrição
+Sistema simples para gerenciamento de cartão de crédito desenvolvido em Java, que permite realizar compras, consultar saldo, listar compras realizadas e aumentar o limite do cartão.
 
-- Defina o limite do cartão de crédito.
-- Lance compras, incluindo descrição, valor, data e categoria.
-- Exiba a lista de compras realizadas, com informações completas e ordenada pela categoria.
-- Visualize o saldo restante no cartão.
-- Aumente o limite se necessário.
+## 🚀 Funcionalidades
 
-### **Como usar**
-  
-1. Compile o código: Utilize um compilador Java para compilar o arquivo Principal.java.
-2. Execute o programa: Execute o arquivo Main.class gerado na compilação.
-3. Interaja com o menu: Siga as instruções do menu para:
-   - Lançar compras
-   - Consultar as compras
-   - Exibir a lista de compras
-   - Aumentar limite
-   - Sair do programa.
-### Funcionalidades
-- Lançamento de compras: O usuário pode inserir a descrição, valor, data e categoria da compra.
-- Validação de saldo: O programa verifica se o saldo do cartão é suficiente para realizar a compra.
-- Exibição de compras: A lista de compras é exibida com a descrição, valor, data e categoria de cada compra.
-- Cálculo de saldo: O saldo restante no cartão é calculado e exibido ao usuário.
+- Realizar compras com descrição, valor e categoria
+- Consultar saldo disponível
+- Visualizar lista de compras realizadas (ordenadas)
+- Aumentar limite do cartão
+- Interface via menu no terminal
 
-### Contribuições
-Contribuições são bem-vindas! Se você encontrar algum bug ou tiver sugestões de melhorias, sinta-se à vontade para abrir um issue ou enviar um pull request.
+## 💻 Tecnologias Utilizadas
+
+- Java
+- Programação Orientada a Objetos
+- Collections Framework (ArrayList)
+
+## 🔧 Como Executar
+
+1. Certifique-se de ter o Java JDK instalado em sua máquina
+2. Clone este repositório:
+```bash
+git clone [url-do-seu-repositorio]
+```
+3. Navegue até o diretório do projeto
+4. Compile os arquivos Java:
+```bash
+javac src/Main.java
+```
+5. Execute o programa:
+```bash
+java src.Main
+```
+
+## 📌 Como Usar
+
+Ao iniciar o programa, você terá acesso a um menu com as seguintes opções:
+
+1. **Realizar compras**: Registra uma nova compra com descrição, valor e categoria
+2. **Consultar saldo**: Mostra o saldo disponível no cartão
+3. **Listar compras realizadas**: Exibe todas as compras feitas, ordenadas
+4. **Aumentar limite do cartão**: Permite aumentar o limite do cartão
+5. **Sair**: Encerra o programa
+
+## 🤝 Contribuindo
+
+Sinta-se à vontade para contribuir com este projeto. Toda contribuição é bem-vinda!
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a [licença MIT](LICENSE).
 
 ### Licença
 Este projeto está licenciado sob a licença MIT.
